@@ -11,7 +11,8 @@
 @implementation MainScene
 
 -(void) play {
-    CCLog(@"play button pressed");
+    
+    CCLOG(@"play button pressed");
 }
 
 @end
