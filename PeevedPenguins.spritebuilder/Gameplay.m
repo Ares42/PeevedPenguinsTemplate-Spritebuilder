@@ -14,6 +14,7 @@
     CCNode *_levelNode;
     CCNode *_contentNode;
     CCNode *_pullbackNode;
+    
     CCNode *_mouseJointNode;
     CCNode *_mouseJoint;
 }
