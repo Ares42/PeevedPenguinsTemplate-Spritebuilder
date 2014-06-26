@@ -178,6 +178,7 @@
     // finally, remove the destroyed seal
     [seal removeFromParent];
     
+    
 }
 
 
