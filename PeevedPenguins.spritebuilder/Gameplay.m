@@ -108,6 +108,7 @@
 {
     // when touches end, meaning the user releases their finger, release the catapult
     [self releaseCatapult];
+    NSLog (@"a penguin was launched");
 }
 
 -(void) touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
@@ -141,7 +142,7 @@
     CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
     [_contentNode runAction:follow];
     
-    NSLog (@"a penguin was launched");
+    
     
 }//launchPenguin
 
