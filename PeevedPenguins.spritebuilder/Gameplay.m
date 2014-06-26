@@ -39,13 +39,9 @@
     //deactivate collisions for invisible mouse node
     _mouseJointNode.physicsBody.collisionMask = @[];
     
-    
-}
+    _physicsNode.collisionDelegate = self;
+}//didLoadFromCCB
 
-
-/*
- method touchBegan
-*/
 
 // called on every touch in this scene
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
@@ -106,7 +102,7 @@
     }
     
     
-}
+}//releaseCatapult
 
 -(void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
@@ -118,7 +114,7 @@
 {
     // when touches are cancelled, meaning the user drags their finger off the screen or onto something else, release the catapult
     [self releaseCatapult];
-}
+}//touchEnded
 
 
 
@@ -144,12 +140,20 @@
     self.position = ccp(0, 0);
     CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
     [_contentNode runAction:follow];
-}
+}//launchPenguin
+
 
 - (void)retry {
     //reload this level
     [[CCDirector sharedDirector] replaceScene: [CCBReader loadAsScene:@"Gameplay"]];
-}//launchPenguin
+}//retry
+
+
+-(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB
+{
+    CCLOG(@"Something collided with a seal!");
+}//ccPhysicsCollision for seals
+
 
 
 @end
