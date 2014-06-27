@@ -21,7 +21,7 @@
     
     CCNode *_currentPenguin;
     CCPhysicsJoint *_penguinCatapultJoint;
-    CCNode *_sealExplosion;
+    CCParticleSystem *_sealExplosion;
 }
 
 // is called when CCB file has completed loading
@@ -174,19 +174,19 @@
 }//ccPhysicsCollision for seals
 
 - (void)sealRemoved:(CCNode *)seal {
+
     
-    /*
     CCLOG(@"loading particle effect");
     // load particle effect
     CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"SealExplosion"];
-    */
+    
     
     CCLOG(@"particle effect clean itself up");
     // make the particle effect clean itself up, once it is completed
     explosion.autoRemoveOnFinish = TRUE;
     
     
-    CCLOG(@"lplace the particle effect on the seals");
+    CCLOG(@"place the particle effect on the seals");
     // place the particle effect on the seals position
     explosion.position = seal.position;
     
