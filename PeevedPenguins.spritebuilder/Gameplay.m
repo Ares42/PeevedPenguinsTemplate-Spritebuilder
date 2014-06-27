@@ -21,8 +21,6 @@
     
     CCNode *_currentPenguin;
     CCPhysicsJoint *_penguinCatapultJoint;
-    
-    CCParticleSystem *_sealExplosion;
 }
 
 // is called when CCB file has completed loading
