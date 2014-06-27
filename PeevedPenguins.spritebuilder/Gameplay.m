@@ -25,10 +25,11 @@
     
     CCAction *_followPenguin;
     
-    //minimum speed for penguins so that level will reset
-    static const float MIN_SPEED = 5.f;
+    
     
 }
+//minimum speed for penguins so that level will reset
+static const float MIN_SPEED = 5.f;
 
 - (void)update:(CCTime)delta {
     if(_currentPenguin.launched) {
