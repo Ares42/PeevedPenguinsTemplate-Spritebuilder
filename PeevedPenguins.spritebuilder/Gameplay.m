@@ -21,6 +21,7 @@
     
     CCNode *_currentPenguin;
     CCPhysicsJoint *_penguinCatapultJoint;
+    
     CCParticleSystem *_sealExplosion;
 }
 
