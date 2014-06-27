@@ -21,6 +21,7 @@
     
     CCNode *_currentPenguin;
     CCPhysicsJoint *_penguinCatapultJoint;
+    CCNode *_sealExplosion;
 }
 
 // is called when CCB file has completed loading
@@ -152,6 +153,10 @@
 
 
 - (void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB {
+    
+    CCLOG(@"Something collided with a seal!");
+    /*
+    
     float energy = [pair totalKineticEnergy];
     
     // if energy is large enough, remove the seal
@@ -161,6 +166,8 @@
             [self sealRemoved:nodeA];
         } key:nodeA];
     }
+    */
+    
 }//ccPhysicsCollision for seals
 
 - (void)sealRemoved:(CCNode *)seal {
