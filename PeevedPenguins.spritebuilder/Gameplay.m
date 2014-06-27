@@ -162,8 +162,11 @@
     if (energy > 5000.f) {
         [[_physicsNode space] addPostStepBlock:^{
             
-           // [self sealRemoved:nodeA];
-            CCLOG(@"Something collided with a seal!");
+            
+            CCLOG(@"Calling sealRemoved");
+           [self sealRemoved:nodeA];
+            
+            
             
         } key:nodeA];
     }
@@ -172,19 +175,28 @@
 
 - (void)sealRemoved:(CCNode *)seal {
     
+    
+    CCLOG(@"loading particle effect");
     // load particle effect
     CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"SealExplosion"];
     
+    
+    CCLOG(@"particle effect clean itself up");
     // make the particle effect clean itself up, once it is completed
-    
     explosion.autoRemoveOnFinish = TRUE;
+    
+    
+    CCLOG(@"lplace the particle effect on the seals");
     // place the particle effect on the seals position
-    
     explosion.position = seal.position;
-    // add the particle effect to the same node the seal is on
     
+    
+    CCLOG(@"add the particle effect to the same node the seal is on");
+    // add the particle effect to the same node the seal is on
     [seal.parent addChild:explosion];
     
+    
+    CCLOG(@"remove the destroyed seal");
     // finally, remove the destroyed seal
     [seal removeFromParent];
     
