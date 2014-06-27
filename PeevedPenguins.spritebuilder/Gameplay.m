@@ -175,11 +175,11 @@
 
 - (void)sealRemoved:(CCNode *)seal {
     
-    
+    /*
     CCLOG(@"loading particle effect");
     // load particle effect
     CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"SealExplosion"];
-    
+    */
     
     CCLOG(@"particle effect clean itself up");
     // make the particle effect clean itself up, once it is completed
